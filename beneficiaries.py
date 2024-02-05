@@ -194,6 +194,7 @@ esn_uj_dict = {
     "Stowarzyszeniu ESN UJ": esn_uj,
     "Stowarzyszeniu ESN UJ Kraków": esn_uj,
     "Stowarzyszeniu ESN Kraków": esn_uj,
+    "Erasmus Student Network UJ Cracow": esn_uj,
 }
 
 standardisation_dict.update(esn_uj_dict)
@@ -238,6 +239,7 @@ culture_dict = {
     "Przewodniczącej Uczelnianej Komisji Kultury": culture,
     "Przewodniczącej Komisji Kultury Samorządu Studentów Uniwersytetu Jagiellońskiego": culture,
     "Pełnomocnikowi ds. kultury Samorządu Studentów Uniwersytetu Jagiellońskiego": culture,
+    "Pełnomocnikowi ds. Wydarzeń Kulturalnych Przewodniczącej Samorządu Studentów Uniwersytetu Jagiellońskiego": culture,
 }
 
 standardisation_dict.update(culture_dict)
@@ -261,6 +263,7 @@ promotion_dict = {
     "Przewodniczącej Zespółu Informacji i Promocji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
     "Przewodniczącej Zespołu Promocji i Informacji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
     "Przewodniczącemu Zespołu ds. Informacji i Promocji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
+    "Zespołowi Informacji i Promocji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
 }
 
 standardisation_dict.update(promotion_dict)
@@ -329,7 +332,29 @@ president_dict = {
 
 standardisation_dict.update(president_dict)
 
+violence = "Zespołowi ds. Przeciwdziałania Przemocy i Dyskryminacji SSUJ"
 
+violence_dict = {
+    "Zespołowi ds. Przeciwdziałania Przemocy i Dyskryminacji Samorządu Studentów Uniwersytetu Jagiellońskiego": violence,
+    "Zespołowi ds. Przeciwdziałania Przemocy i Dyskryminacji SSUJ": violence,
+    "Pełnomocnikowi ds. przeciwdziałania przemocy i dyskryminacji": violence,
+    "Pełnomocnik Przewodniczącej ds. przeciwdziałania przemocy i dyskryminacji Samorządu Studentów Uniwersytetu Jagiellońskiego": violence,
+    "Pełnomocnik ds. przeciwdziałania przemocy i dyskryminacji Samorządu Studentów Uniwersytetu Jagiellońskiego": violence,
+    "Przewodniczącej Zespółu ds. przeciwdziałania przemocy i dyskryminacji Samorządu Studentów Uniwersytetu Jagiellońskiego": violence,
+    "Przewodniczącemu Zespołu ds. Przeciwdziałania Przemocy i Dyskryminacji SSUJ": violence,
+}
+
+standardisation_dict.update(violence_dict)
+
+projects = "Uczelnianej Komisji ds. Projektów i Współprac Samorządu Studentów Uniwersytetu Jagiellońskiego"
+
+projects_dict = {
+    "Uczelnianej Komisji ds. Projektów i Współprac Samorządu Studentów Uniwersytetu Jagiellońskiego": projects,
+    "Przewodniczącemu Uczelnianej Komisji ds. Projektów i Współprac Samorządu Studentów Uniwersytetu Jagiellońskiego": projects,
+    "Pełnomocnikowi ds. projektów i współprac Samorządu Studentów Uniwersytetu Jagiellońskiego": projects,
+}
+
+standardisation_dict.update(projects_dict)
 
 def standardize_beneficiary_record(record):
     benef = record["beneficiary"]
