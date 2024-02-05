@@ -151,6 +151,8 @@ wrss_wsmip_dict = {
     "Wydziałowej Radzie Samorządu Studentów Wydziału Studiów Międzynarodowych i Politycznych Uniwersytetu Jagiellońskiego": wrss_wsmip,
 }
 
+standardisation_dict.update(wrss_wsmip_dict)
+
 rss_mish = "Radzie Samorządu Studentów Międzywydziałowych Indywidualnych Studiów Humanistycznych Uniwersytetu Jagiellońskiego"
 
 rss_mish_dict = {
@@ -158,8 +160,7 @@ rss_mish_dict = {
     "Radzie Samorządu Studentów Międzywydziałowych Indywidualnych Studiów Humanistycznych UJ": rss_mish,
 }
 
-
-standardisation_dict.update(wrss_wsmip_dict)
+standardisation_dict.update(rss_mish_dict)
 
 management = "Zarządowi SSUJ"
 
@@ -223,6 +224,7 @@ aegee_dict = {
     "Stowarzyszeniu Europejskie Forum Studentów AEGEE": aegee,
     "Stowarzyszeniu Europejskie Forum Studentów AEGEE Kraków": aegee,
     "Stowarzyszeniu Europejskiemu Forum Studentów AEGEE Kraków": aegee,
+    "Stowarzyszeniu Europejskie Forum Studentów AEGEE KRAKÓW": aegee,
 }
 
 standardisation_dict.update(aegee_dict)
@@ -249,6 +251,85 @@ didactics_dict = {
 }
 
 standardisation_dict.update(didactics_dict)
+
+promotion = "Zespołowi Informacji i Promocji Samorządu Studentów UJ"
+
+promotion_dict = {
+    "Przewodniczącej Zespołu Informacji i Promocji": promotion,
+    "Przewodniczącej Zespołu Informacji i Promocji Samorządu Studentów UJ": promotion,
+    "Przewodniczącej Zespołu Informacji i Promocji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
+    "Przewodniczącej Zespółu Informacji i Promocji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
+    "Przewodniczącej Zespołu Promocji i Informacji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
+    "Przewodniczącemu Zespołu ds. Informacji i Promocji Samorządu Studentów Uniwersytetu Jagiellońskiego": promotion,
+}
+
+standardisation_dict.update(promotion_dict)
+
+nawojka = "Radzie Mieszkańców DS \"Nawojka\""
+
+nawojka_dict = {
+    "Przewodniczącej Radzie Mieszkańców DS. Nawojka": nawojka,
+    "Radzie Domu Studenckiego Nawojka": nawojka,
+    "Radzie Mieszkańców Domu Studenckiego Nawojka": nawojka,
+    "Radzie Mieszkańców DS \"Nawojka\"": nawojka,
+    "Radzie Mieszkańców DS Nawojka": nawojka,
+}
+
+standardisation_dict.update(nawojka_dict)
+
+bursa = "Radzie Mieszkańców DS Bursa Jagiellońska"
+
+bursa_dict = {
+    "Przewodniczącemu Rady Mieszkańców Domu Studenckiego Bursa Jagiellońska": bursa,
+    "Radzie Mieszkańców Domu Studenckiego Bursa": bursa,
+    "Radzie Mieszkańców DS Bursa Jagiellońska": bursa,
+    "Radzie Mieszkańców Domu Studenckiego Bursa Jagiellońska": bursa 
+}
+
+standardisation_dict.update(bursa_dict)
+
+mobility = "Uczelnianemu Zespołowi Mobilności Samorządu Studentów Uniwersytetu Jagiellońskiego"
+
+mobility_dict = {
+    "Przewodniczącej Uczelnianego Zespołu Mobilności Samorządu Studentów Uniwersytetu Jagiellońskiego": mobility,
+    "Przewodniczącej Zespołu Mobilności Samorządu Studentów Uniwersytetu Jagiellońskiego": mobility,
+    "Przewodniczącemu Zespołowi Mobilności Samorządu Studentów Uniwersytetu Jagiellońskiego": mobility,
+    "Przewodniczącemu Zespołu Mobilności Samorządu Studentów Uniwersytetu Jagiellońskiego": mobility,
+    "Zespołowi Mobilności Samorządu Studentów Uniwersytetu Jagiellońskiego": mobility,
+}
+
+standardisation_dict.update(mobility_dict)
+
+secretary = "Sekretarzowi Zarządu Samorządu Studentów UJ"
+
+secretary_dict = {
+    "Sekretarz Zarządu Samorządu Studentów Uniwersytetu Jagiellońskiego": secretary,
+    "Sekretarzowi Zarządu Samorządu Studentów Uniwersytetu Jagiellońskiego": secretary,
+}
+
+standardisation_dict.update(secretary_dict)
+
+bydgoska = "Radzie Mieszkańców DS Bydgoska"
+
+bydgoska_dict = {
+    "Radzie Mieszkańców Dom Studencki Bydgoska": bydgoska,
+    "Radzie Mieszkańców Domu Studenckiego \"Bydgoska\"": bydgoska,
+    "Radzie Mieszkańców DS Bydgoska": bydgoska,
+    "Przewodniczącej Rady Mieszkańców Domu Studenckiego Bydgoska": bydgoska,
+}
+
+standardisation_dict.update(bydgoska_dict)
+
+president = "Przewodniczącej Zarządu Samorządu Studentów UJ"
+
+president_dict = {
+    "Przewodniczącej Samorządu Studentów": president,
+    "Przewodniczącej Samorządu Studentów Uniwersytetu Jagiellońskiego": president,
+}
+
+standardisation_dict.update(president_dict)
+
+
 
 def standardize_beneficiary_record(record):
     benef = record["beneficiary"]
