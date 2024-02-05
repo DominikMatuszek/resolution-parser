@@ -7,8 +7,8 @@ standardisation_dict = {}
 
 akt_rozdroze = "AKT Rozdroże"
 rozdroze_dict = {
-"Akademickiemu Klubowi Turystycznemu Rozdroże przy Uniwersytecie Jagiellońskim":
-    akt_rozdroze,
+    "Akademickiemu Klubowi Turystycznemu Rozdroże przy Uniwersytecie Jagiellońskim":
+        akt_rozdroze,
     "Stowarzyszeniu AKT \"Rozdroże\"": akt_rozdroze,
     "Stowarzyszeniu AKT Rozdroże": akt_rozdroze,
     "Akademickiemu Klubowi Turystycznemu ROZDROŻE przy Uniwersytecie Jagiellońskim": akt_rozdroze,
@@ -43,8 +43,8 @@ standardisation_dict.update(wrss_wgig_dict)
 wrss_wp = "WRSS WP"
 
 wrss_wp_dict = {
-    "Wydziałowej Rady Samorządu Studentów Wydziału Polonistyki Uniwersytetu Jagiellońskiego" : wrss_wp,
-    "Wydziałowej Radzie Samorządu Studentów Polonistyki Uniwersytetu Jagiellońskiego" : wrss_wp,
+    "Wydziałowej Rady Samorządu Studentów Wydziału Polonistyki Uniwersytetu Jagiellońskiego": wrss_wp,
+    "Wydziałowej Radzie Samorządu Studentów Polonistyki Uniwersytetu Jagiellońskiego": wrss_wp,
     "Wydziałowej Radzie Samorządu Studentów Wydzialu Polonistyki Uniwersytetu Jagiellońskiego": wrss_wp,
     "Wydziałowej Radzie Samorządu Studentów Wydziału Polonistyki Uniwersytetu Jagiellońskiego": wrss_wp,
 }
@@ -217,7 +217,6 @@ dkms_dict = {
 
 standardisation_dict.update(dkms_dict)
 
-
 aegee = "Stowarzyszeniu Europejskie Forum Studentów AEGEE"
 
 aegee_dict = {
@@ -286,7 +285,7 @@ bursa_dict = {
     "Przewodniczącemu Rady Mieszkańców Domu Studenckiego Bursa Jagiellońska": bursa,
     "Radzie Mieszkańców Domu Studenckiego Bursa": bursa,
     "Radzie Mieszkańców DS Bursa Jagiellońska": bursa,
-    "Radzie Mieszkańców Domu Studenckiego Bursa Jagiellońska": bursa 
+    "Radzie Mieszkańców Domu Studenckiego Bursa Jagiellońska": bursa
 }
 
 standardisation_dict.update(bursa_dict)
@@ -356,13 +355,15 @@ projects_dict = {
 
 standardisation_dict.update(projects_dict)
 
+
 def standardize_beneficiary_record(record):
     benef = record["beneficiary"]
 
     if benef in standardisation_dict:
         record["beneficiary"] = standardisation_dict[benef]
-    
+
     return record
+
 
 def standardize_beneficiaries(records):
     return list(map(standardize_beneficiary_record, records))

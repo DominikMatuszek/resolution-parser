@@ -1,5 +1,6 @@
 import pdfplumber
-import re 
+import re
+
 
 def parse_resolution(pdf_path):
     parsed = []
@@ -13,11 +14,14 @@ def parse_resolution(pdf_path):
 
     return "\n".join(parsed)
 
+
 def normalize_whitespace(s):
     return " ".join(s.split())
 
+
 def normalize_interpunction(s):
     return s.replace("„", "\"").replace("”", "\"")
+
 
 def remove_non_standard_characters(s):
     # Creating a regex that will remove anything that is not a number, interpunction or a polish/latin letter
@@ -29,6 +33,7 @@ def remove_non_standard_characters(s):
     total_regex = r"[^" + polish_alphabet_regex + numbers + interpunction + r"]"
 
     return re.sub(total_regex, " ", s)
+
 
 def misc_cleanup(s):
     # PDF reading artifacts will sometimes insert spaces in the middle of words
@@ -49,7 +54,7 @@ def misc_cleanup(s):
 
     # Informatyki 
     s = re.sub(r"I\s*n\s*f\s*o\s*r\s*m\s*a\s*t\s*y\s*k\s*i", "Informatyki", s)
-    
+
     # Międzynarodowych
     s = re.sub(r"M\s*i\s*ę\s*d\s*z\s*y\s*n\s*a\s*r\s*o\s*d\s*o\s*w\s*y\s*c\s*h", "Międzynarodowych", s)
 
@@ -67,6 +72,7 @@ def misc_cleanup(s):
     s = s.replace("Indywidulanych", "Indywidualnych")
 
     return s
+
 
 def get_normalised_resolution(pdf_path):
     resolution = parse_resolution(pdf_path)

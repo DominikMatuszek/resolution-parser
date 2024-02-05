@@ -1,6 +1,7 @@
-import re 
+import re
 
-def extract_cost (resolution):
+
+def extract_cost(resolution):
     cost_regex = re.compile(r"([0-9]|\s|\,|\.)*(?=zł \(sło)")
     cost = cost_regex.search(resolution)
 
@@ -17,7 +18,8 @@ def extract_cost (resolution):
         return cost
     else:
         return None
-    
+
+
 def extract_beneficiary(resolution):
     beneficiary_regex = re.compile(r"(?<=Przyznaje się) .* (?=dotację)")
     beneficiary = beneficiary_regex.search(resolution)
@@ -27,6 +29,7 @@ def extract_beneficiary(resolution):
     else:
         return None
 
+
 def extract_name(resolution):
     # The name of the project seems to be always in quotes 
     name_regex = re.compile(r"\".*\"")
@@ -35,10 +38,12 @@ def extract_name(resolution):
     if name:
         return name.group().strip()
     else:
-        return None 
-    
+        return None
+
+
 def extract_date(resolution):
-    date_regex = re.compile(r"(?<=z dnia) [0-9]* [AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż]* [0-9]* (?=r\.)")
+    date_regex = re.compile(
+        r"(?<=z dnia) \d* [AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż]* \d* (?=r\.)")
     date = date_regex.search(resolution)
 
     if date:
@@ -46,9 +51,11 @@ def extract_date(resolution):
     else:
         return None
 
+
 def extract_resolution_number(resolution):
     # It's the third word in the resolution
     return int(resolution.split()[2])
+
 
 def money_was_given(resolution):
     regex = re.compile(r"Przyznaje się")
