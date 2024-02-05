@@ -1,9 +1,11 @@
-from extract_data import extract_cost, extract_beneficiary, extract_name, extract_date, money_was_given, extract_resolution_number
+from extract_data import extract_cost, extract_beneficiary, extract_name, extract_date, money_was_given, \
+    extract_resolution_number
 from parse import get_normalised_resolution
 from beneficiaries import standardize_beneficiaries
 
-import os 
+import os
 import csv
+
 
 def convert_resolution_to_dict(resolution):
     cost = extract_cost(resolution)
@@ -15,18 +17,19 @@ def convert_resolution_to_dict(resolution):
 
     try:
         year = int(date.split()[2])
-    except: 
+    except:
         year = "Nie znaleziono roku w uchwale"
 
     if not cost and about_money:
-        raise ValueError("There was no cost in the resolution about money. This should not happen. Full resolution: " + resolution)
-    
+        raise ValueError(
+            "There was no cost in the resolution about money. This should not happen. Full resolution: " + resolution)
+
     if not beneficiary:
         beneficiary = "Nie znaleziono beneficjenta w uchwale"
-    
+
     if not name:
         name = "Nie znaleziono nazwy projektu w uchwale"
-    
+
     if not date:
         date = "Nie znaleziono daty w uchwale"
 
@@ -36,9 +39,10 @@ def convert_resolution_to_dict(resolution):
         "name": name,
         "date": date,
         "about_money": about_money,
-        "year": year, 
+        "year": year,
         "number": number
     }
+
 
 def load_resolutions(resolutions_folder):
     resolutions = []
@@ -55,6 +59,7 @@ def load_resolutions(resolutions_folder):
 
     return resolutions
 
+
 def main():
     resolutions = load_resolutions("resolutions")
     resolutions = standardize_beneficiaries(resolutions)
@@ -64,7 +69,9 @@ def main():
         writer = csv.writer(f)
         writer.writerow(["Numer uchwały", "Beneficjent", "Koszt", "Nazwa projektu", "Data uchwały"])
         for resolution in resolutions:
-            writer.writerow([resolution["number"], resolution["beneficiary"], resolution["cost"], resolution["name"], resolution["date"]])
+            writer.writerow([resolution["number"], resolution["beneficiary"], resolution["cost"], resolution["name"],
+                             resolution["date"]])
+
 
 if __name__ == "__main__":
     main()
