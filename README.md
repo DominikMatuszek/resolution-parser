@@ -22,6 +22,10 @@ Następnie należy zainstalować dependencje skryptu, korzystając z polecenia `
 
 Skrypt uruchamia się za pomocą polecenia `python main.py`. Zacznie przetwarzać pliki w folderze `resolutions` i zapisze wyniki w pliku `parsed.csv`.
 
+## Weryfikacja poprawności
+
+Część uchwał nie zostanie potraktowana przez skrypt jako mówiąca o przyznaniu pieniędzy; uchwały takie zostają pominięte przy generowaniu pliku `parsed.csv`. O tym, czy uchwała zostaje pominięta czy nie, decyduje funkcja `money_was_given` w pliku `extract_data.py`. Celem weryfikacji jak wyglądają uchwały które zostały pominięte istnieje plik `sanity_check.py` który wypisze na standardowe wyjście uchwały które zostały pominięte przez skrypt, a nie są odmowami przyznania pieniędzy i zawierają jakąkolwiek wzmiankę o pieniądzach (tj. jako spójny podciąg pojawia się fraza `zł` albo `z ł`). Wynik działania tego skryptu został zapisany w pliku `sanity_check.txt`. 
+
 ## Struktura plików
 
 Skrypt korzysta z następujących plików:
