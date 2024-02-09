@@ -14,7 +14,7 @@ Plik ten może być od razu zaimportowany do arkusza kalkulacyjnego, celem przep
 
 ## Użycie skryptu
 
-**Uwaga** : skrypt wykonuje parsing uchwał z BIPu korzystając z wyrażeń regularnych. Uchwały te nie są w pełni zestandaryzowane, a więc możliwe są błędy w parsowaniu. Warto zweryfikować wyniki działania skrpytu korzystając z zapewnionych przez niego informacji o numerze uchwały i dacie podjęcia (które to liczby umożliwiają jej jednoznaczną identyfikację na stronie BIPu). Ponadto, w przyszłości format uchwał może ulec zmianie. Może to wymagać aktualizacji wyrażeń regularnych używanych przez skrypt. 
+**Uwaga**: skrypt wykonuje parsing uchwał z BIPu korzystając z wyrażeń regularnych. Uchwały te nie są w pełni zestandaryzowane, a więc możliwe są błędy w parsowaniu. Warto zweryfikować wyniki działania skrpytu korzystając z zapewnionych przez niego informacji o numerze uchwały i dacie podjęcia (które to liczby umożliwiają jej jednoznaczną identyfikację na stronie BIPu). Ponadto, w przyszłości format uchwał może ulec zmianie. Może to wymagać aktualizacji wyrażeń regularnych używanych przez skrypt. Nie biorę odpowiedzialności i nie udzielam żadnej gwarancji co do poprawności działania skryptu, zgodnie z zasadami licencji MIT. 
 
 Po pobraniu repozytorium na komputer (np. za pomocą polecenia terminala `git clone`) należy utworzyć wewnątrz katalogu repozytorium folder `resolutions`, a w nim umieścić pliki z uchwałami zarządu w formacie `.pdf`. 
 
