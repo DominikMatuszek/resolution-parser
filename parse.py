@@ -67,6 +67,12 @@ def misc_cleanup(s):
     # Studentów 
     s = re.sub(r"S\s*t\s*u\s*d\s*e\s*n\s*t\s*ó\s*w", "Studentów", s)
 
+    # Słownie
+    s = re.sub(r"S\s*ł\s*o\s*w\s*n\s*i\s*e", "Słownie", s)
+
+    # słownie
+    s = re.sub(r"s\s*ł\s*o\s*w\s*n\s*i\s*e", "słownie", s)
+
     # misspellings
     s = s.replace("Wydzialu", "Wydziału")
     s = s.replace("Indywidulanych", "Indywidualnych")

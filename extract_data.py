@@ -1,9 +1,12 @@
 import re
 
 
-def extract_cost(resolution):
-    cost_regex = re.compile(r"([0-9]|\s|\,|\.)*(?=zł \(sło)")
+def extract_cost(resolution, sanity_check=False):
+    cost_regex = re.compile(r"[0-9]([0-9]|\s|\,|\.)*(?=zł \(sło)")
     cost = cost_regex.search(resolution)
+
+    if sanity_check:
+        sanity = list(cost_regex.finditer(resolution))
 
     if cost:
         cost = cost.group()
@@ -15,9 +18,16 @@ def extract_cost(resolution):
         # 1000,00 zł
         cost = cost.replace(" ", "").replace(".", "").replace(",", ".")
         cost = float(cost)
-        return cost
+
+        if not sanity_check:
+            return cost
+        else: 
+            return cost, len(sanity)
     else:
-        return None
+        if sanity_check:
+            return None, 0 
+        else:
+            return None
 
 
 def extract_beneficiary(resolution):

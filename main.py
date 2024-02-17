@@ -8,7 +8,8 @@ import csv
 
 
 def convert_resolution_to_dict(resolution):
-    cost = extract_cost(resolution)
+    
+    cost, number_of_costs = extract_cost(resolution, sanity_check=True)      
     beneficiary = extract_beneficiary(resolution)
     name = extract_name(resolution)
     date = extract_date(resolution)
@@ -19,6 +20,13 @@ def convert_resolution_to_dict(resolution):
         year = int(date.split()[2])
     except:
         year = "Nie znaleziono roku w uchwale"
+
+    if number_of_costs > 1:
+        if about_money:
+            raise ValueError(
+                "There were multiple costs in the resolution about money. This should not happen. Full resolution: " + resolution)
+        else: 
+            print("Warning: found multiple costs in a resolution that is not about giving money. It might be a modification of a previous resolution. Full resolution: " + resolution)
 
     if not cost and about_money:
         raise ValueError(
